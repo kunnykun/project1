@@ -1,4 +1,3 @@
-
 import { useAuth } from '@/hooks/useAuth';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -104,7 +103,7 @@ const Dashboard = () => {
           <div className="flex justify-between items-center h-20">
             <div className="flex items-center gap-4">
               <img 
-                src="/lovable-uploads/0ef956b5-3fab-4c8f-b536-3e45836ac75c.png" 
+                src="/images/logo.png" 
                 alt="Australian Vacuum Services" 
                 className="h-12 w-auto"
               />

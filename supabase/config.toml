@@ -1,21 +1,43 @@
+project_id = "project1"
 
-project_id = "xblaayhsnjenrvmmjqta"
-
-[auth]
+[api]
 enabled = true
-site_url = "http://localhost:3000"
-additional_redirect_urls = ["https://lovable.dev"]
+port = 54321
+schemas = ["public", "graphql_public"]
+extra_search_path = ["public", "extensions"]
+max_rows = 1000
+
+[db]
+port = 54323
+shadow_port = 54320
+major_version = 15
+
+[studio]
+enabled = true
+port = 54324
+api_url = "http://127.0.0.1"
+
+[inbucket]
+enabled = true
+port = 54333
+smtp_port = 54334
+pop3_port = 54335
+
+[realtime]
+enabled = true
 
 [storage]
 enabled = true
+file_size_limit = "50MiB"
 
-[storage.buckets.service-photos]
-public = true
-file_size_limit = 10485760
-allowed_mime_types = ["image/jpeg", "image/png", "image/webp", "image/gif"]
-
-[functions.generate-and-send-report]
-verify_jwt = false
-
-[functions.send-sms]
-verify_jwt = false
+[auth]
+enabled = true
+site_url = "http://127.0.0.1:3000"
+additional_redirect_urls = ["https://127.0.0.1:3000"]
+jwt_expiry = 3600
+enable_refresh_token_rotation = true
+refresh_token_reuse_interval = 10
+enable_signup = true
+enable_anonymous_sign_ins = false
+enable_manual_linking = false
+minimum_password_length = 6 
